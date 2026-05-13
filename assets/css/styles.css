@@ -1,0 +1,166 @@
+:root{
+    --main-fushia : #F13E93;
+    --pink:#F891BB;
+    --light-pink:#F9D0CD;
+    --light-yellow : #FAFFCB;
+    --dark-fushia:#a7004f;
+
+}
+body{
+    /* font-family: "Lobster", sans-serif; */
+    /* font-family: "Sacramento", cursive; */
+    font-family:"Playfair Display", serif;
+}
+a{
+    text-decoration: none;
+}
+.hero-sec{
+    background-color: var(--pink);
+    height: 92vh;
+}
+
+.bg-pink{
+    background-color: var(--pink);
+}
+.bg-fushia{
+    background-color: var(--main-fushia);
+}
+.bg-dfushia{
+    background-color: var(--dark-fushia);
+}
+.bg-lpink{
+    background-color: var(--light-pink);
+}
+.bg-lyellow{
+    background-color: var(--light-yellow);
+}
+
+.c-pink{
+    color: var(--pink);
+}
+.c-fushia{
+    color: var(--main-fushia);
+}
+.c-dfushia{
+    color: var(--dark-fushia);
+}
+.c-lpink{
+    color: var(--light-pink);
+}
+.c-lyellow{
+    color: var(--light-yellow);
+}
+
+.center-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-sec image{
+    opacity: 1;
+    x:25;
+    y:25;
+}
+.blob {
+    position: absolute;
+    /* top: 20%; */
+    left: 10%;
+    width: 300px;
+    opacity: 0.7;
+    animation: floatBlob 6s ease-in-out infinite;
+}
+
+.blob svg {
+    width: 100%;
+    display: block;
+}
+
+.wave{
+    animation: waving 10s linear infinite;
+    overflow: hidden;
+}
+
+.wave svg {
+    max-width: 1600px;
+    display: block;
+}
+.circle-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 0;              /* remove Bootstrap padding */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-color: var(--dark-fushia);
+}
+
+.inside-check{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding: 0;              /* remove Bootstrap padding */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+   background-color: var(--dark-fushia);
+   display: none;
+}
+
+.inside-check.active{
+    display: block;
+}
+
+.btn.active{
+    border-color:var(--dark-fushia); ;
+}
+
+.missionsInput{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--dark-fushia);
+    border-radius: 0;
+}
+
+.form-control:focus {
+    
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--dark-fushia);
+}
+
+.c-gray{
+    color: rgb(198, 196, 196);
+}
+.btn:hover{
+    border-color: var(--dark-fushia);
+}
+@keyframes floatBlob {
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+
+@keyframes waving {
+    0% {
+        transform: translateX(0px) scale(1);
+    }
+    50% {
+        transform: translateX(-50px) scale(1.05);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+
+
