@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- My CSS Styles -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <title>To Do :</title>
+</head>
+<body class="bg-pink">
+    <div class="container ms-5 mt-2">
+        <h1>To Do List:</h1>
+        <ul class="mx-auto" id="tasksList">
+            <li class="d-flex justify-content-between align-items-center">
+                <button id="firstBtn" onclick="myFunction(this)" type="button" class="btn circle-btn me-2" data-bs-toggle="button">
+                    <div id="inside-check" class="inside-check"></div>
+                </button>
+                <div  class="input-group mb-3">
+                    <input type="text" onkeydown="newTask2(this,event)" class="form-control missionsInput" placeholder="Add note" aria-label="Task" aria-describedby="basic-addon1">
+                </div>
+                <div>
+                    <button id="addTaskBtn" type="button" onclick="newTask()" class="ms-2 c-dfushia border-0">+</button>
+                </div>
+            </li>
+            <li class="d-flex justify-content-between align-items-center">
+                <button id="firstBtn" onclick="myFunction(this)" type="button" class="btn circle-btn me-2" data-bs-toggle="button">
+                    <div class="inside-check"></div>
+                </button>
+                <div  class="input-group mb-3">
+                    <input type="text" onkeydown="newTask2(this,event)" class="form-control missionsInput" placeholder="Add note" aria-label="Task" aria-describedby="basic-addon1">
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        // Check Done Task Function --------------
+        function myFunction(element){
+        const innerDiv = element.querySelector('div')
+        console.log("here is the inside check")
+        console.log(innerDiv)
+
+        if(innerDiv.classList.contains('active'))
+        {
+            innerDiv.classList.remove('active')
+        }
+        else
+        {
+            innerDiv.classList.add('active')
+            innerDiv.classList.add('c-gray')
+        }
+        }
+
+        // Adding new Task -------------------
+        function newTask(){
+            const plusBtn = document.getElementById('addTaskBtn')
+            // console.log("The new task button")
+            // console.log(plusBtn)
+
+            let tasksList = document.getElementById('tasksList')
+            // console.log("The Task List")
+            // console.log(tasksList)
+            
+
+            let newTask = '<li class="d-flex justify-content-between align-items-center"><button id="firstBtn" onclick="myFunction(this)" type="button" class="btn circle-btn me-2" data-bs-toggle="button"><div class="inside-check"></div></button><div  class="input-group mb-3"><input type="text" onkeydown="newTask2(this,event)" class="form-control missionsInput" placeholder="Add note" aria-label="Task" aria-describedby="basic-addon1"></div></li>'
+
+            tasksList.insertAdjacentHTML('beforeend', newTask) 
+
+
+
+        }
+
+        function newTask2(element,event){
+            
+            let tasksList = document.getElementById('tasksList')
+            console.log("The Task List")
+            console.log(tasksList)
+
+            const oldList = tasksList.innerHTML
+            // console.log("The Old Task List")
+            // console.log(oldList)
+
+            if(event.key === 'Enter'){
+                
+                let newTask = '<li class="d-flex justify-content-between align-items-center"><button id="firstBtn" onclick="myFunction(this)" type="button" class="btn circle-btn me-2" data-bs-toggle="button"><div class="inside-check"></div></button><div  class="input-group mb-3"><input type="text" onkeydown="newTask2(this,event)" class="form-control missionsInput" placeholder="Add note" aria-label="Task" aria-describedby="basic-addon1"></div></li>'
+
+                tasksList.insertAdjacentHTML('beforeend', newTask) 
+
+                // element.value = "";
+
+            }
+
+
+            
+
+
+
+
+        }
+        // const task = document.getElementsByClassName('missionsInput')
+        // console.log("here is the task")
+        // console.log(task)
+
+        // let tasksList = document.getElementById('tasksList')
+        // console.log("here is the tasksList")
+        // console.log(tasksList)
+
+        // let listElement = ''
+
+        // for (let t of task){
+        //     t.addEventListener('keydown',function(event){
+        //     if(event.key === 'Enter')
+        //     {
+        //         event.preventDefault(); 
+
+        //         console.log("Enter key was pressed!");
+
+        //         listElement+= '<div class="d-flex justify-content-between align-items-center"><button id="firstBtn" onclick="myFunction()" type="button" class="btn circle-btn me-2" data-bs-toggle="button"><div id="inside-check" class="inside-check"></div></button><div  class="input-group mb-3"><input type="text" class="form-control missionsInput" placeholder="Add note" aria-label="task" aria-describedby="basic-addon1"></div></div>'
+                
+        //         tasksList.innerHTML= listElement
+
+        //         console.log("The taskList after pressing")
+        //         console.log(tasksList)
+                
+        //     }
+        
+        // })
+        // }
+        
+    </script>
+</body>
+</html>
